@@ -1,7 +1,7 @@
 '--------------------------------------------------------------
 '                   Thomas Jensen | uCtrl.io
 '--------------------------------------------------------------
-'  file: Car_lights_controller v2.0
+'  file: Car_lights_controller v2.1
 '  date: 17/08/2008
 '--------------------------------------------------------------
 
@@ -54,6 +54,7 @@ If Pind.0 = 1 Then Start_timer = 0                          'park off
 If Pind.2 = 0 Then
    Portb.7 = 1                                              'high beam on
    B_active = 0
+   Pwm1a = 255                                              'blue led off
 End If
 If Pind.2 = 1 And B_active = 0 Then Portb.7 = 0             'high beam off
 
@@ -90,11 +91,15 @@ If B_active = 0 Then
    B_timer = 0
    Portb.5 = 0
    End If
-If B_timer = 60 Then Portb.7 = 1
+If B_timer = 60 And Pind.3 = 0 Then Portb.7 = 1
+If B_timer = 40 And Pind.3 = 1 Then
+   Portb.6 = 1
+   Pwm1b = 225
+   End If
 If B_timer = 30 Then Portb.7 = 0
 If B_timer = 22 Then
    Portb.6 = 1
-   Pwm1b = 0
+   Pwm1b = 225
    End If
 If B_timer = 8 Then
    Portb.6 = 0
@@ -106,7 +111,7 @@ Decr B_timer
 If Pind.0 = 1 And Wait_timer = 0 And B_active = 0 And Wait_arm = 1 Then
    Wait_timer = 2400
    Portb.6 = 1
-   Pwm1a = 0
+   Pwm1a = 255
    End If
 If Wait_timer > 1 Then Decr Wait_timer
 If Wait_timer = 1 Then

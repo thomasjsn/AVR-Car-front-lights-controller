@@ -1,6 +1,6 @@
 Report       : Car-lights-controller
 Date         : 09-09-2017
-Time         : 11:54:35
+Time         : 11:57:50
 
 Compiler     : BASCOM-AVR LIBRARY V 2.0.7.8
 Processor    : TINY2313
@@ -8,9 +8,9 @@ SRAM         : 80 hex
 EEPROM       : 80 hex
 ROMSIZE      : 800 hex
 
-ROMIMAGE     : 4D4 hex  -> Will fit into ROM
-ROMIMAGE     :  1236 dec
-FLASH USED   :  60  %
+ROMIMAGE     : 52C hex  -> Will fit into ROM
+ROMIMAGE     :  1324 dec
+FLASH USED   :  64  %
 BAUD         : 9600 Baud
 XTAL         : 8000000 Hz
 BAUD error   : 0.16%
