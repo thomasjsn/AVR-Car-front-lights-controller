@@ -1,6 +1,6 @@
 Report       : Car-lights-controller
 Date         : 09-09-2017
-Time         : 11:50:16
+Time         : 11:54:35
 
 Compiler     : BASCOM-AVR LIBRARY V 2.0.7.8
 Processor    : TINY2313
@@ -8,20 +8,20 @@ SRAM         : 80 hex
 EEPROM       : 80 hex
 ROMSIZE      : 800 hex
 
-ROMIMAGE     : 2D4 hex  -> Will fit into ROM
-ROMIMAGE     :  724 dec
-FLASH USED   :  35  %
+ROMIMAGE     : 4D4 hex  -> Will fit into ROM
+ROMIMAGE     :  1236 dec
+FLASH USED   :  60  %
 BAUD         : 9600 Baud
 XTAL         : 8000000 Hz
 BAUD error   : 0.16%
 
 Stack start  : DF hex
-Stack size   : 28 hex
-S-Stacksize  : 10 hex
-S-Stackstart : B8 hex
-Framesize    : 20 hex
-Framestart   : 88 hex
-Space left   :  35  dec
+Stack size   : 20 hex
+S-Stacksize  : 8 hex
+S-Stackstart : C0 hex
+Framesize    : 18 hex
+Framestart   : A0 hex
+Space left   :  55  dec
 
 LCD DB7      : PORTB.7
 LCD DB6      : PORTB.6
@@ -91,7 +91,10 @@ ERR                              Bit [2]           0006          6
 L_TIMER                          Byte              0060          96 
 B_ACTIVE                         Byte              0061          97 
 B_TIMER                          Byte              0062          98 
-H_TIMER                          Byte              0063          99 
+WAIT_ARM                         Bit [7]           0063          99 
+WAIT_TIMER                       Integer           0064          100 
+START_TIMER                      Byte              0066          102 
+AL_TIMER                         Byte              0067          103 
 
 --------------------------------------------------------------------------------
 Constant                         Value
@@ -502,7 +505,7 @@ RSTDISBL                         7
 SELFPRGEN                        0
 _DATE_FORMAT                     0
 _DATE_SEPARATOR                  92
-_GSTRBUF                         136
+_GSTRBUF                         160
 _DECIMALPOINT                    46
 _RTSCTS                          0
 _RTSCTS1                         0
@@ -533,9 +536,9 @@ _PRDWORD                         0
 _PBIN_EXTENDED                   0
 _BIGSTRINGS                      0
 _FPROTECT                        0
-_HWSTACK_LOW                     &H00B7
-_SWSTACK_LOW                     &H00A8
-_FRAME_HIGH                      &H00A9
+_HWSTACK_LOW                     &H00BF
+_SWSTACK_LOW                     &H00B8
+_FRAME_HIGH                      &H00B9
 _XMEGA                           0
 CBITINFINITY                     0
 CMBITINFINITY                    1
@@ -595,7 +598,6 @@ R29                              not used
 R30                              not used
 R31                              not used
 COMPARE1                         not used
-PWM1B                            not used
 PWM0A                            not used
 PWM0B                            not used
 
