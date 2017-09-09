@@ -1,0 +1,6 @@
+basavr.log
+*.bin
+*.bm
+*.dbg
+*.obj
+*.sim
