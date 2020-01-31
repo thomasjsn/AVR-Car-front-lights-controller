@@ -1,3 +1,6 @@
+Schematics/Last Loaded*
+Schematics/*.BMP
+Schematics/*.png
 basavr.log
 *.bin
 *.bm
